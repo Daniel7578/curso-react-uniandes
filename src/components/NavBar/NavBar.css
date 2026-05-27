@@ -1,0 +1,37 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+}
+.navBar-logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navBar-links{
+    display: flex;
+    gap: 2rem;
+}
+.navBar-link{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.navBar-link:hover{
+    text-decoration: underline;
+}
+.navBar-title{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.nav-active{
+    background-color: blueviolet;
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+.nav-inactive{
+    text-decoration: none;
+}

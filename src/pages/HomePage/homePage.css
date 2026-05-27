@@ -1,0 +1,17 @@
+.homePage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.homePage-title {
+    font-size: 2rem;
+    color: #333;
+}
+.homePage-description {    
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
