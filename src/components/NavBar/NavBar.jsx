@@ -14,6 +14,9 @@ isActive ? "nav-active" : "nav-inactive"
                 <NavLink to="/formulario" className={({ isActive }) =>
 isActive ? "nav-active" : "nav-inactive"
 }><li className="navBar-link">Formulario</li></NavLink>
+                <NavLink to="/userGallery" className={({ isActive }) =>
+isActive ? "nav-active" : "nav-inactive"
+}><li className="navBar-link">User Gallery</li></NavLink>
             </ul>
         </nav>
     );

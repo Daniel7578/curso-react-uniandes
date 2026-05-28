@@ -3,3 +3,4 @@ export * from './TwitterFollowCard';
 export * from './FormularioBasico';
 export * from './NavBar';
 export * from './Perfil';
+export * from './UserGallery';

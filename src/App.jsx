@@ -6,6 +6,7 @@ import { NavBar } from './components/NavBar';
 import { Perfil } from './components/Perfil';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
+import { UserGallery } from './components/UserGallery/UserGallery';
 
 const users = [
     {
@@ -91,6 +92,7 @@ export function App() {
                             ))
                         } />
                         <Route path='/perfil/:id' element={<Perfil />} />
+                        <Route path='/userGallery' element={<UserGallery />} />
                         <Route path='*' element={<h1>404 Not Found</h1>} />
                     </Routes>
             </main>
