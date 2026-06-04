@@ -1,40 +1,10 @@
-import { useState, useEffect } from "react";
+import { useGetData } from "../../hooks";
+
+const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 
 export function UserGallery() {
-    // Control de estado de usuarios -> Se actuialice este valor quiere decir que fue exitoso la solicitud 
-    const [users, setUsers] = useState([]);
-
-    // Control de estado de carga -> Se actualice este valor a false quiere decir que la solicitud se encuentra en proceso
-    const [isLoading, setIsLoading] = useState(false);
-
-    // Control de estado de error -> Se actualice este valor a true quiere decir que la solicitud tuvo un error
-    const [isError, setIsError] = useState(null);
-    useEffect( ()=> {
-        console.log('Iniciando llamada a la Api .....')
-        const obtenerUsarios = async ()=>{
-            try{
-                setIsLoading(true);
-                await new Promise(resolve => setTimeout(resolve, 4000)); // Simulación de retraso de 4 segundos
-                const respuesta = await fetch('https://jsonplaceholder.typicode.com/users'); // A proposito cambios esto 
-                console.log('Respuesta recibida: ' + (respuesta.ok ? 'OK' : 'Error'));
-                if (!respuesta.ok) {
-                    throw new Error(`Error en la solicitud: ${respuesta.status} ${respuesta.statusText}`);
-                }
-                const data = await respuesta.json();
-                setUsers(data)
-                setIsLoading(false);
-                console.log('Usuarios actualizados...')
-            }
-            catch(error){
-                console.log(error.message);
-                setIsError(error.message);
-                setIsLoading(false);
-            }
-
-        }
-        obtenerUsarios();
-    }, [])
+    const { data: users, isLoading, isError } = useGetData(API_URL);
     if (isLoading) {
     return (
       <div style={{ padding: '20px', textAlign: 'center' }}>
